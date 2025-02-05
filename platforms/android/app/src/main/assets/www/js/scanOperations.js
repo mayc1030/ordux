@@ -102,11 +102,15 @@ function scan_create_product() {
 }
 
 
-function scan_find_product() {
+function scan_find_product(callback) {
     cordova.plugins.barcodeScanner.scan(
         function (result) {
             var scanButton = document.getElementById('scan_find_product_button');
             scanButton.setAttribute('data-barcode', result.text);
+
+            if (typeof callback === "function") {
+                callback();
+            }
         },
         function (error) {
             navigator.notification.alert(

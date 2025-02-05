@@ -52,6 +52,7 @@ function initializeListProducts() {
 		});
 
 		actualizarStockProductos()
+		button_find.setAttribute('data-barcode', "");
 	}
 
 

@@ -236,8 +236,9 @@ function assignEventListeners() {
 
     var scanButton = document.getElementById('scan_find_product_button');
     if (scanButton) {
-        scanButton.addEventListener('click', scan_find_product);
-        scanButton.addEventListener('click', actionPressScan);
+        scanButton.addEventListener('click', function () {
+            scan_find_product(actionPressScan);
+        });
     }
 
     var takePhotoButton = document.getElementById('takePhotoButton');
