@@ -9,6 +9,8 @@ function initializeListProducts() {
 		const searchText = document.getElementById('searchInput').value.toLowerCase();
 		const selectedCategory = document.getElementById("category").value;
 
+		var button_find = document.getElementById('scan_find_product_button');
+		var barCode = button_find.getAttribute('data-barcode');
 
 		let query = 'SELECT * FROM productos';
 		let params = [];
@@ -23,6 +25,12 @@ function initializeListProducts() {
 			conditions.push('LOWER(name) LIKE ?');
 			params.push(`%${searchText}%`);
 		}
+
+		if (barCode !== "") {
+			conditions.push('bar_code = ?');
+			params.push(barCode);
+		}
+
 
 		if (conditions.length > 0) {
 			query += ' WHERE ' + conditions.join(' AND ');
@@ -212,6 +220,12 @@ function handleKeyPress(event) {
 
 		//  searchProducts();
 	}
+}
+
+function actionPressScan() {
+	const selectElement = document.getElementById('category');
+	const changeEvent = new Event('change', { bubbles: true });
+	selectElement.dispatchEvent(changeEvent);
 }
 
 // function searchProducts() {

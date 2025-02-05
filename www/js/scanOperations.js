@@ -91,22 +91,34 @@ function scan_create_product() {
             skuField.value = result.text;
         },
         function (error) {
-            var resultDiv = document.getElementById('resultDiv');
-            resultDiv.innerHTML = 'Scanning failed: ' + error;
+            navigator.notification.alert(
+                'Error al scanear ' + error,
+                null,
+                'Éxito',
+                'OK'
+            );
         }
     );
 }
 
 
-function scan_find_product() {
+function scan_find_product(callback) {
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            var skuField = document.getElementById('field-sku-product');
-            skuField.value = result.text;
+            var scanButton = document.getElementById('scan_find_product_button');
+            scanButton.setAttribute('data-barcode', result.text);
+
+            if (typeof callback === "function") {
+                callback();
+            }
         },
         function (error) {
-            var resultDiv = document.getElementById('resultDiv');
-            resultDiv.innerHTML = 'Scanning failed: ' + error;
+            navigator.notification.alert(
+                'Error al scanear ' + error,
+                null,
+                'Éxito',
+                'OK'
+            );
         }
     );
 }

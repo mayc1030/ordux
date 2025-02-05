@@ -28,14 +28,14 @@ function onDeviceReady() {
         // JSON de ejemplo
         const productos = [
             { "id": 111, "image": "./img/producttest.jpg", "name": "ABADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 222, "image": "./img/producttest.jpg", "name": "xxNEGRONI DE LA MONTAÑA", "sale_price": 82000, "purchase_price": 20000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "producto", "category": "Cocteles" },
+            { "id": 222, "image": "./img/producttest.jpg", "name": "xxNEGRONI DE LA MONTAÑA", "sale_price": 82000, "purchase_price": 20000, "sku": "abc123", "bar_code": "1234", "stock": "8", "type": "producto", "category": "Cocteles" },
             { "id": 333, "image": "./img/producttest.jpg", "name": "BADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
             { "id": 444, "image": "./img/producttest.jpg", "name": "BBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
             { "id": 555, "image": "./img/producttest.jpg", "name": "CBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
             { "id": 666, "image": "./img/producttest.jpg", "name": "DBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
             { "id": 777, "image": "./img/producttest.jpg", "name": "EBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
             { "id": 888, "image": "./img/producttest.jpg", "name": "FBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 999, "image": "./img/producttest.jpg", "name": "GBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 999, "image": "./img/producttest.jpg", "name": "NATUCHIPS", "sale_price": 2200, "purchase_price": 1000, "sku": "abc1234", "bar_code": "7702189055453", "stock": "8", "type": "insumo", "category": "Cocteles" },
         ];
 
         // Inserta los datos
@@ -236,7 +236,9 @@ function assignEventListeners() {
 
     var scanButton = document.getElementById('scan_find_product_button');
     if (scanButton) {
-        scanButton.addEventListener('click', scan_find_product);
+        scanButton.addEventListener('click', function () {
+            scan_find_product(actionPressScan);
+        });
     }
 
     var takePhotoButton = document.getElementById('takePhotoButton');
