@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src 'self' https://dev-ordux.pantheonsite.io;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu/menu.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="css/menu/menu.css"> -->
+    <!-- <link rel="stylesheet" href="css/chart/chart.css"> -->
+    <!-- <link rel="stylesheet" href="css/order/order.css"> -->
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <title>Hello World</title>
+</head>
+
+<body>
+
+    <header class="header" role="banner">
+        <nav id="nav" class="tab-list nav" role="navigation">
+            <!-- The overlay -->
+            <div id="myNav" class="overlay">
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <a class="tab nav__link" href="#tab-1" data-load="home.html">Home</a>
+                    <a class="tab nav__link active" href="#tab-2" data-load="printer.html">Impresora</a>
+                    <a class="tab nav__link" href="#tab-5" data-load="products.html">Productos</a>
+                    <a class="tab nav__link" href="#tab-3" data-load="orders.html">Pedidos</a>
+                    <a class="tab nav__link" href="#tab-7" data-load="categories.html">Categorias</a>
+                    <a class="tab nav__link" href="#tab-4" data-load="reports.html">Reportes</a>
+                </div>
+            </div>
+            <div class="profile">
+                <div class="img-profile">
+                    <img src="./img/logo.png" class="imagen" />
+                </div>
+                <div class="profile-name">
+                    <p>ORDUX</p>
+                </div>
+            </div>
+
+            <div id="breadcrumb"></div>
+            </div>
+
+            <!-- MENU TOGGLE BUTTON -->
+            <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
+                <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                    <title>Toggle Menu</title>
+                    <g>
+                        <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5" />
+                        <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5" />
+                        <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5" />
+                        <line class="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5" />
+                        <circle class="menuicon__circle" r="23" cx="25" cy="25" />
+                    </g>
+                </svg>
+            </a>
+
+        </nav>
+    </header>
+
+
+    <section id="content-page">
+        <div id="content"></div>
+    </section>
+
+
+
+    <script src="cordova.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/main.js"></script> <!-- Archivo principal para eventos de dispositivo -->
+    <script src="js/menu/menu.js"></script>
+    <script src="js/products/listProducts.js"></script>
+    <script src="js/products/addProducts.js"></script>
+    <script src="js/orders.js"></script>
+    <!-- <script src="js/printerOrder.js"></script> -->
+    <script src="js/fileOperations.js"></script> <!-- Operaciones relacionadas con archivos -->
+    <script src="js/scanOperations.js"></script> <!-- Operaciones relacionadas con escaneo de códigos -->
+    <script src="js/photoOperations.js"></script> <!-- Operaciones relacionadas con la cámara -->
+    <script src="js/printerOperations.js"></script> <!-- Operaciones relacionadas con la impresora -->
+    <script src="js/chart/chart.umd.js"></script>
+    <script src="js/chart/chartSetup.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/others/jspdf.umd.min.js"></script>
+    <script src="js/others/jspdf.plugin.autotable.js"></script>
+    <script src="js/others/html2canvas.min.js"></script>
+
+
+</body>
+
+</html>

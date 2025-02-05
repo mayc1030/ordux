@@ -1,0 +1,70 @@
+{
+  "name": "com.tu.app.id",
+  "displayName": "NombreDeTuApp-2.0",
+  "version": "2.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^13.0.0",
+    "cordova-browser": "^7.0.0",
+    "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-btprinter": "github:CesarBalzer/Cordova-Plugin-BTPrinter",
+    "cordova-plugin-camera": "^7.0.0",
+    "cordova-plugin-device": "^3.0.0",
+    "cordova-plugin-dialogs": "^2.0.2",
+    "cordova-plugin-file": "^8.1.0",
+    "cordova-plugin-file-transfer": "^2.0.0",
+    "cordova-plugin-googleplus": "^8.5.2",
+    "cordova-plugin-networkinterface": "^2.2.0",
+    "cordova-plugin-toast": "^1.0.1",
+    "cordova-plugin-x-socialsharing": "^6.0.4",
+    "cordova-plugin-zip": "^3.1.0",
+    "cordova-sqlite-storage": "^6.1.0",
+    "es6-promise-plugin": "^4.2.2",
+    "phonegap-plugin-barcodescanner": "^8.1.0"
+  },
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-file": {
+        "ANDROIDX_WEBKIT_VERSION": "1.4.0"
+      },
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-android-permissions": {},
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.8igfkog5qsq09j8qm48kskp3tbfvs5ef-1021379820582",
+        "WEB_APPLICATION_CLIENT_ID": "1021379820582-8igfkog5qsq09j8qm48kskp3tbfvs5ef.apps.googleusercontent.com",
+        "PLAY_SERVICES_VERSION": "15.0.1"
+      },
+      "cordova-plugin-zip": {},
+      "cordova-plugin-x-socialsharing": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-camera": {
+        "ANDROIDX_CORE_VERSION": "1.6.+"
+      },
+      "cordova-plugin-btprinter": {},
+      "cordova-plugin-toast": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-device": {},
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-networkinterface": {}
+    }
+  },
+  "dependencies": {
+    "chart.js": "^4.4.3",
+    "jszip": "^3.10.1"
+  }
+}

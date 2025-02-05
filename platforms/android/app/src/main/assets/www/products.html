@@ -1,0 +1,63 @@
+<div id="tab-5" class="tab-content">
+
+    <div class="control d-flex align-items-center">
+        <i id="btn-back-section-home" class="bi bi-arrow-left fs-1 me-2"></i>
+        <div class="flex-grow-1 d-flex justify-content-center">
+            <h2 class="mb-0">Productos</h2>
+        </div>
+        <i class="bi bi-cart-fill fs-3 quantity-products">0</i>
+    </div>
+
+    <div class="search-bar">
+        <button onclick="goBack()" class="btn">
+            <i class="bi bi-arrow-left"></i>
+        </button>
+        <div class="input-container">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Buscar productos" onkeypress="handleKeyPress(event)">
+        </div>
+        <button onclick="openQRCodeScanner()" class="btn">
+            <i class="bi bi-qr-code"></i>
+        </button>
+    </div>
+
+
+    <div class="container">
+        <select name="category" id="category">
+            <option value="All">Todos los Productos</option>
+            <option value="Cocteles">Cocteles</option>
+            <option value="Cerveza">Cervezas</option>
+            <option value="Destilados">Destilados</option>
+            <option value="Cocina">Cocina</option>
+            <option value="Ssz">Sodas Saborizadas y Zumos</option>
+            <option value="Bcfr">Bebidas Calientes - Frías y Repostería</option>
+        </select>
+        <hr>
+
+        <div class="row" id="cards"></div>
+    </div>
+
+
+
+    <template id="template-card">
+        <div class="product col-6 mb-2 col-md-2">
+            <img src="" class="card-img-top">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="title-product-card">Titulo</h5>
+                    <p>$<span>precio</span></p>
+                    <p>stock: <span class="value-stock">0</span></p>
+                    <button class="btn btn-dark">Pedir</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <div class="floating-button-add-product">
+        <button id="btn-add-product" class="btn-add-product tab" data-load="add_product.html">
+            <i class="bi bi-plus"></i>
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+#chart-container {
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    height: 400px; /* Ajusta la altura según sea necesario */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    border: 1px solid #ddd; /* Opcional: agrega un borde alrededor del contenedor */
+    padding: 10px; /* Opcional: agrega un relleno alrededor del gráfico */
+}
+
+#myChart {
+    width: 100%; /* El canvas ocupa el 100% del ancho del contenedor */
+    height: 100%; /* El canvas ocupa el 100% de la altura del contenedor */
+}

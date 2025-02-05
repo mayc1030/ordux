@@ -1,0 +1,472 @@
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+body {
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: none;
+	-webkit-user-select: none;
+	background-color: #E0E0E0;
+	height: 100%;
+	margin: 0px;
+	padding: 8px;
+	width: 100%;
+	font-family: 'RobotoRegular', 'Droid Sans', 'Segoe UI', Segoe, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
+	font-size: 12px;
+	box-sizing:border-box;
+}
+
+.app {
+	background: url(../images/cordova.png) no-repeat center top;
+	position: absolute;
+	left: 50%;
+	top: 5%;
+	height: 50px;
+	width: 225px;
+	text-align: center;
+	padding: 180px 0px 0px 0px;
+	margin: -115px 0px 0px -112px;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 0px;
+	overflow: visible;
+	padding: 0px;
+	text-align: center;
+}
+
+.event {
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	color: #FFFFFF;
+	font-size: 12px;
+	margin: 0px 30px;
+	padding: 2px 0px;
+}
+
+.event.listening {
+	background-color: #333333;
+	display: block;
+}
+
+.event.received {
+	background-color: #4B946A;
+	display: none;
+}
+
+.blink {
+	animation: fade 3000ms infinite;
+	-webkit-animation: fade 3000ms infinite;
+}
+
+button{
+	margin:4px 0;
+	padding:4px 8px;
+	min-width:64px;
+}
+
+fieldset {
+	border: 1px solid #808080;
+	border-radius: 3px;
+	margin: 8px 0;
+}
+
+img {
+	max-height: 80px;
+	max-width: 90%;
+}
+
+label {
+	display: block;
+	line-height: 2em;
+}
+
+legend {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+select{
+	margin:4px 0;
+	width:100%;
+}
+
+textarea {
+	box-sizing: border-box;
+	margin:4px 0;
+	width: 100%;
+}
+
+.success{
+	color:#009900;
+}
+.error{
+	color:#990000;
+}
+
+.active {
+	font-weight: 600;
+}
+
+
+.show {
+	display: block;
+}
+
+/*INICIO ESTILO TABS*/
+.tab-content {
+	display: none;
+	padding-top: 122px;
+	padding-bottom: 60px;
+}
+
+.tabs{
+	text-align: center;
+}
+/*FIN ESTILOS TABS*/
+
+/*INICIO CONTENEDOR DE TODO EL SITIO */
+#content-page{
+	margin-top: 22px;
+}
+/*FIN CONTENEDOR DE TODO EL SITIO*/
+
+.imagen{
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	border-radius: 150px;
+
+}
+
+.img-profile{
+	position: relative;
+	left: 10px;
+	top: 8px;
+	background-color: #fff;
+	padding: 5px;
+	width: 60px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	-webkit-box-shadow: 1px 1px 10px #484848;
+	border-radius: 150px;
+}
+
+.profile-name{
+	position: relative;
+	left: 80px;
+	top: -36px;
+	color: white
+}
+
+/* The Overlay (background) */
+.overlay-login {
+	/* Height & width depends on how you want to reveal the overlay (see JS below) */
+	height: 100%;
+	width: 100%;
+	position: fixed; /* Stay in place */
+	z-index: 20; /* Sit on top */
+	left: 0;
+	top: 0;
+	background-color: black; /* Black fallback color */
+	overflow-x: hidden; /* Disable horizontal scroll */
+	transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content-login {
+	position: relative;
+	top: 10%; /* 25% from the top */
+	width: 100%; /* 100% width */
+	text-align: center; /* Centered text/links */
+	margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay-login a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: white;
+	display: block; /* Display block instead of inline */
+	transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay-login a:hover, .overlay-login a:focus {
+	color: darkgoldenrod;
+}
+
+
+.box input[type="text"],
+.box input[type="password"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 10px 10px;
+	width: 250px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s
+}
+
+.box h1 {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+	width: 300px;
+	border-color: #2ecc71
+}
+
+.box .forgot {
+	color: red !important;
+}
+
+.box input[type="submit"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #2ecc71;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+	background: #2ecc71
+}
+
+
+
+ul.social-network {
+	background-color: black;
+	list-style: none;
+	display: inline;
+	margin-left: 0 !important;
+	padding: 0
+}
+
+ul.social-network li {
+	display: inline;
+	margin: 0 5px
+}
+
+.social-network a.icoFacebook:hover {
+	background-color: #3B5998
+}
+
+.social-network a.icoTwitter:hover {
+	background-color: #33ccff
+}
+
+.social-network a.icoGoogle:hover {
+	background-color: #BD3518
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i {
+	color: #fff
+}
+
+a.socialIcon:hover,
+.socialHoverClass {
+	color: #44BCDD
+}
+
+.social-circle li a {
+	display: inline-block;
+	position: relative;
+	margin: 0 auto 0 auto;
+	border-radius: 50%;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	font-size: 20px
+}
+
+.social-circle li i {
+	margin: 0;
+	line-height: 50px;
+	text-align: center
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+	transform: rotate(360deg);
+	transition: all 0.2s
+}
+
+.social-circle i {
+	color: #fff;
+	transition: all 0.8s;
+	transition: all 0.8s
+}
+
+
+@charset "UTF-8";
+:root {
+	--screen-width: 320px;
+	--screen-height: 560px;
+	--header-bg-color: black;
+	--splash-bg-color: #368887;
+}
+
+
+#breadcrumb {
+	position: absolute;
+	right: 80px;
+	top: 30px;
+	color:#fff
+}
+
+
+
+.nav__toggle {
+	display: inline-block;
+	position: absolute;
+	z-index: 10;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	outline: 0;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: background-color 0.15s linear;
+}
+.nav__toggle:hover, .nav__toggle:focus {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menuicon {
+	display: block;
+	cursor: pointer;
+	color: white;
+	transform: rotate(0deg);
+	transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.menuicon__bar, .menuicon__circle {
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 3;
+	stroke-linecap: round;
+}
+.menuicon__bar {
+	transform: rotate(0deg);
+	transform-origin: 50% 50%;
+	transition: transform 0.25s ease-in-out;
+}
+.menuicon__circle {
+	transition: stroke-dashoffset 0.3s linear 0.1s;
+	stroke-dashoffset: 144.513262038;
+	stroke-dasharray: 144.513262038;
+}
+
+.nav:target .menuicon,
+.nav--open .menuicon {
+	color: white;
+	transform: rotate(180deg);
+}
+.nav:target .menuicon__circle,
+.nav--open .menuicon__circle {
+	stroke-dashoffset: 0;
+}
+.nav:target .menuicon__bar:nth-child(1), .nav:target .menuicon__bar:nth-child(4),
+.nav--open .menuicon__bar:nth-child(1),
+.nav--open .menuicon__bar:nth-child(4) {
+	opacity: 0;
+}
+.nav:target .menuicon__bar:nth-child(2),
+.nav--open .menuicon__bar:nth-child(2) {
+	transform: rotate(45deg);
+}
+.nav:target .menuicon__bar:nth-child(3),
+.nav--open .menuicon__bar:nth-child(3) {
+	transform: rotate(-45deg);
+}
+.nav:target .nav__menu,
+.nav--open .nav__menu {
+	visibility: visible;
+}
+.nav:target .nav__item,
+.nav--open .nav__item {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+.header {
+	position: fixed;
+    top: 0;
+	left: 0;
+    width: 100%;
+    z-index: 1;
+	height: 5rem;
+	background-color: var(--header-bg-color);
+}
+
+
+/*Hidden class for adding and removing*/
+.lds-dual-ring.hidden {
+	display: none;
+}
+
+/*Add an overlay to the entire page blocking any further presses to buttons or other elements.*/
+.overlay_lds {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+	background: #000000;
+	z-index: 999;
+	opacity: 0.9;
+	transition: all 0.5s;
+}
+/*Spinner Styles*/
+.lds-dual-ring {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+}
+.lds-dual-ring:after {
+	position: relative;
+	top: 40%;
+	content: " ";
+	display: block;
+	width: 64px;
+	height: 64px;
+	margin: 5% auto;
+	border-radius: 50%;
+	border: 6px solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+

@@ -1,0 +1,150 @@
+<div id="tab-6" class="tab-content">
+  <div id="loader" class="lds-dual-ring hidden overlay_lds"></div>
+  <div id="sliding-message" class="hidden"></div>
+
+  <div class="control d-flex align-items-center">
+    <i id="btn-back-section-product" class="bi bi-arrow-left fs-1 me-2"></i>
+    <div class="flex-grow-1 d-flex justify-content-center">
+      <h2 class="mb-0">Nuevo Producto</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <form id="productForm">
+      <div class="mb-3">
+        <label for="image" class="form-label">Imagen</label>
+        <input
+          type="button"
+          class="form-control"
+          id="field-image-takephoto-product"
+          name="image"
+          value="Tomar Foto "
+        />
+        <input
+          type="button"
+          class="form-control"
+          id="field-image-selectphoto-product"
+          name="image"
+          value="Cargar de Galeria"
+        />
+        <div id="capturedImageContainer" class="mt-3"></div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="field-name-product"
+          name="name"
+          placeholder="Nombre del producto"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="sale-price" class="form-label">Precio de venta</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input
+            type="number"
+            class="form-control"
+            id="field-sale-price-product"
+            name="sale-price"
+            placeholder="Precio de venta"
+            step="0.01"
+            min="0"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="purchase-price" class="form-label">Precio de compra</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input
+            type="number"
+            class="form-control"
+            id="field-purchase-price-product"
+            name="purchase-price"
+            placeholder="Precio de compra"
+            step="0.01"
+            min="0"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="stock" class="form-label">Stock</label>
+        <input
+          type="number"
+          class="form-control"
+          id="field-stock-product"
+          name="stock"
+          placeholder="Stock"
+          min="0"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Categoría</label>
+        <select
+          class="form-select"
+          id="field-category-product"
+          name="category"
+          required
+        >
+          <option value="">Selecciona una categoría</option>
+          <option value="Cocteles">Cocteles</option>
+          <option value="fashion">Moda</option>
+          <option value="home">Hogar</option>
+          <option value="books">Libros</option>
+          <option value="other">Otros</option>
+        </select>
+      </div>
+
+           <!-- Contenedor desplegable -->
+           <div class="mb-3">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#optionalFields" aria-expanded="false" aria-controls="optionalFields">
+              Campos opcionales
+            </button>
+            <div class="collapse mt-3" id="optionalFields">
+              <div class="card card-body">
+                <div class="mb-3">
+                  <label for="sku" class="form-label">SKU</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="field-sku-product"
+                    name="sku"
+                    placeholder="SKU"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="bar_code" class="form-label">Código de barras</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="field-bar-code-product"
+                    name="bar_code"
+                    placeholder="Código de barras"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="type" class="form-label">Tipo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="field-type-product"
+                    name="type"
+                    placeholder="Tipo"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+      <button type="submit" class="btn btn-primary">
+        <i class="bi bi-plus">Agregar Producto</i>
+      </button>
+    </form>
+  </div>
+</div>

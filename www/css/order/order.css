@@ -1,0 +1,78 @@
+.toll {
+	overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es más largo que el contenedor */
+	padding-bottom: 10px; /* Espacio para el contenido */
+  }
+
+  .control {
+	position: fixed;
+	top: 80px; /* O ajusta según tu diseño */
+	left: 0;
+	width: 100%;
+	/* z-index: 1;  */
+	background-color: white; /* O cualquier color de fondo que desees */
+	padding: 10px; /* Ajusta el padding según sea necesario */
+  }
+
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+	left: 0;
+    width: 100%;
+	color: #fff;
+    background-color: black; /* Asegúrate de que el fondo no sea transparente */
+    /* z-index: 1;  */
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra para destacarlo */
+}
+
+
+.icon-container {
+	display: flex; /* Alinear los iconos en línea */
+	gap: 10px; /* Espacio entre los iconos */
+}
+
+.icon {
+	display: inline-flex; /* Alinear el ícono en línea */
+	align-items: center; /* Centrar verticalmente */
+	justify-content: center; /* Centrar horizontalmente */
+	width: 2.5rem; /* Ancho del ícono */
+	height: 2.5rem; /* Altura del ícono */
+	font-size: 1.5rem; /* Tamaño del ícono */
+	border-radius: 50%; /* Bordes redondeados */
+	text-decoration: none; /* Eliminar subrayado */
+}
+
+.icon-red {
+	background-color: red; /* Fondo rojo */
+	color: white; /* Color del ícono blanco */
+}
+
+.icon-green {
+	background-color: green; /* Fondo verde */
+	color: white; /* Color del ícono blanco */
+}
+
+.icon:hover {
+	opacity: 0.8; /* Efecto al pasar el ratón (opcional) */
+}
+
+
+.table td, .table th {
+	padding: 0.4rem !important;
+}
+.table #items th {
+	padding: 0 !important
+}
+
+.table #items td {
+	font-size: 12px !important;
+}
+
+.total-product{
+	font-size: 12px;
+}
+
+.title-product-card{
+	font-size: 0.8rem;
+}

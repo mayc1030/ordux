@@ -1,0 +1,124 @@
+<div id="tab-2" class="tab-content">
+  <div id="loader" class="lds-dual-ring hidden overlay_lds"></div>
+
+
+
+  <!-- <div class="control">
+    <div id="message_order"></div>
+    <ul class="social-network social-circle">
+      <li>
+        <i id="btn-back-section-product" class="bi bi-handbag-fill fs-1 me-2"></i>
+      </li>
+      <li>
+        <a href="#" class="icoFacebook" title="Facebook"><i class="bi bi-house"></i></a>
+      </li>
+      <li>
+        <a href="#" class="icoTwitter" title="Twitter"><i class="bi bi-x-circle-fill"></i></a>
+      </li>
+      <li>
+        <a href="#" class="icoGoogle" title="Google +"><i class="bi bi-printer-fill"></i></a>
+      </li>
+    </ul>
+  </div> -->
+
+
+  <div class="control d-flex align-items-center">
+    <div id="message_order"></div>
+    <i id="btn-back-section-home" class="bi bi-arrow-left fs-1 me-2"></i>
+    <div class="flex-grow-1 d-flex justify-content-center">
+      <h2 class="mb-0">Pedidos</h2>
+    </div>
+    <i id="btn-back-section-product" class="bi bi-handbag-fill fs-3 me-2"></i>
+  </div>
+
+  <div class="toll">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Acción</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody id="items">
+        <!-- Aquí va el contenido del cuerpo de la tabla -->
+      </tbody>
+    </table>
+  </div>
+
+  <div id="fixed-footer-container" class="fixed-footer">
+    <template id="template-footer">
+
+      <span>Total $</span>
+      <span class="total-price">0</span>
+      <span>Cantidad Productos</span>
+      <i class="bi bi-cart-fill quantity-product">0</i>
+      <div class="icon-container">
+        <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+          <i class="bi bi-trash3-fill"></i> Cancelar
+        </button>
+        <button class="btn btn-success btn-sm" id="enviar-pedido">
+          <i class="bi bi-clipboard-fill"></i> Enviar
+        </button>
+      </div>
+
+    </template>
+  </div>
+
+  <template id="template-carrito">
+    <tr>
+      <th scope="row">id</th>
+      <td>Café</td>
+      <td>1</td>
+      <td>
+        <div class="icon-container">
+          <i class="bi bi-dash-circle-fill cbtn-warning icon icon-red"></i>
+          <i class="bi bi-plus-circle-fill cbtn-dark icon icon-green"></i>
+        </div>
+      </td>
+      <td>$<span>500</span></td>
+    </tr>
+  </template>
+</div>
+
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"> <!-- Aquí se agrega la clase "modal-dialog-centered" -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmModalLabel">Confirmar Orden</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas realizar la Orden?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" id="confirmButton" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal de Confirmación eliminar pedido -->
+<div class="modal fade" id="confirmDeleteOrderModal" tabindex="-1" aria-labelledby="confirmModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"> <!-- Aquí se agrega la clase "modal-dialog-centered" -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmModalLabel">Eliminar orden</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar la Orden?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" id="confirmDeleteOrderButton" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

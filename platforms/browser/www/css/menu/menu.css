@@ -1,0 +1,83 @@
+/* The Overlay (background) */
+.overlay {
+	/* Height & width depends on how you want to reveal the overlay (see JS below) */
+	height: 100%;
+	width: 0;
+	position: fixed;
+	/* Stay in place */
+	z-index: 2000;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	background-color: black;
+	/* Black fallback color */
+	overflow-x: hidden;
+	/* Disable horizontal scroll */
+	transition: 0.5s;
+	/* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+.overlay::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../../img/fondomenu.jpg');
+	/* Ruta a la imagen de fondo */
+	background-repeat: repeat;
+	/* Repite la imagen de fondo */
+	background-size: cover;
+	/* Asegura que la imagen cubra todo el área del overlay */
+	opacity: 0.2;
+	/* Ajusta la opacidad de la imagen */
+	z-index: -1;
+	/* Asegura que el pseudo-elemento esté detrás del contenido del overlay */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+	position: relative;
+	top: 25%;
+	/* 25% from the top */
+	width: 100%;
+	/* 100% width */
+	text-align: center;
+	/* Centered text/links */
+	margin-top: 30px;
+	/* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: white;
+	display: block;
+	/* Display block instead of inline */
+	transition: 0.3s;
+	/* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+	color: darkgoldenrod;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+	.overlay a {
+		font-size: 20px
+	}
+}
+
+
+.slide-out {
+	transform: translateX(-100%);
+	/* Mueve el elemento fuera de la pantalla hacia la izquierda */
+	transition: transform 0.2s ease-out;
+	/* Duración de la transición y tipo de animación */
+}
