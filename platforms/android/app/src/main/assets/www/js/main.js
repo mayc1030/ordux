@@ -229,6 +229,14 @@ function assignEventListeners() {
         scanButton.addEventListener('click', scanCode);
     }
 
+    var scanButton = document.getElementById('scan_create_product_button');
+    if (scanButton) {
+        scanButton.addEventListener('click', scan_create_product);
+    }
+
+
+
+
     var takePhotoButton = document.getElementById('takePhotoButton');
     if (takePhotoButton) {
         takePhotoButton.addEventListener('click', takePhoto);
@@ -291,11 +299,10 @@ function assignEventListeners() {
         SectionOrderButton.addEventListener('click', goSectionOrders);
     }
 
-
-
     var addProductButton = document.getElementById('btn-add-product');
     if (addProductButton) {
         addProductButton.addEventListener('click', openSectionAddProduct);
+        // addProductButton.addEventListener('click', openSectionIndepent("add_product.html", "Nuevo Producto"));
     }
 
     var addFieldTakePhotoProduct = document.getElementById('field-image-takephoto-product');
@@ -315,8 +322,6 @@ function assignEventListeners() {
             saveData(); // Llama a la función para guardar los datos
         });
     }
-
-
 }
 
 
@@ -362,6 +367,7 @@ function goSectionOrders() {
         linkByDataLoad.click();
     }
 }
+
 
 
 
@@ -427,3 +433,22 @@ function scanNetworkForPrinters(deviceIP) {
         });
     }
 }
+
+
+function openSectionIndepent(data_url, data_breadcrumb) {
+    // var url = $(this).data('load');
+    var url = data_url
+    $('#content').load(url, function () {
+        $('.tab-content').addClass('show');
+        $('#content').find('#' + url.split('.')[0]).addClass('show');
+        assignEventListeners();
+
+        var breadcrumbDiv = document.getElementById('breadcrumb');
+        breadcrumbDiv.innerHTML = data_breadcrumb;
+
+    });
+    $('.tab').removeClass('active');
+    $(this).addClass('active');
+}
+
+

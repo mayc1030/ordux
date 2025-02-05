@@ -12,6 +12,8 @@ function scanCode() {
     );
 }
 
+
+///storage/emulated/0/Android/data/[com.tu.paquete]/files/
 function saveScanResult(result) {
     var scanData = {
         text: result.text,
@@ -79,4 +81,19 @@ function saveScanResult(result) {
             });
         });
     });
+}
+
+
+
+function scan_create_product() {
+    cordova.plugins.barcodeScanner.scan(
+        function (result) {
+            var skuField = document.getElementById('field-sku-product');
+            skuField.value = result.text;
+        },
+        function (error) {
+            var resultDiv = document.getElementById('resultDiv');
+            resultDiv.innerHTML = 'Scanning failed: ' + error;
+        }
+    );
 }

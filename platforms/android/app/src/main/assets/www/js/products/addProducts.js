@@ -149,7 +149,7 @@ function saveData() {
         fields.push('bar_code');
         values.push(bar_code);
     }
-   
+
     if (type !== null) {
         fields.push('type');
         values.push(type);

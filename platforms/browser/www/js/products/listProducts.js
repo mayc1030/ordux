@@ -204,11 +204,11 @@ function initializeListProducts() {
 
 function handleKeyPress(event) {
 	if (event.key === 'Enter') {
-		event.preventDefault();
+		// event.preventDefault();
 
-		const selectElement = document.getElementById('category');
-		const changeEvent = new Event('change', { bubbles: true });
-		selectElement.dispatchEvent(changeEvent);
+		// const selectElement = document.getElementById('category');
+		// const changeEvent = new Event('change', { bubbles: true });
+		// selectElement.dispatchEvent(changeEvent);
 
 		//  searchProducts();
 	}

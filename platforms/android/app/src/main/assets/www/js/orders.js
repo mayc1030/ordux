@@ -241,6 +241,14 @@ function initializeOrders() {
 
 			});
 
+			openSectionIndepent("order-confirm.html", "orden");
+
+			setTimeout(() => {
+
+				generateTable();
+
+			}, 2000);
+
 		}
 	}
 	function saveOrder(producto) {
@@ -264,7 +272,7 @@ function initializeOrders() {
 
 		db.transaction(tx => {
 			tx.executeSql(
-				`INSERT INTO orders (id_producto, name, price, category, quantity, date) VALUES (?, ?, ?, ?, ?, datetime('now'))`,
+				`INSERT INTO orders (id_producto, name, price, category, quantity, date) VALUES (?, ?, ?, ?, ?, datetime('now', '-5 hours'))`,
 				[producto.id, producto.name, producto.precio, producto.category, producto.cantidad],
 				(tx, result) => {
 					console.log('Orden guardada correctamente', result);

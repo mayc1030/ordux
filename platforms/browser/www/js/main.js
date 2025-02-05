@@ -229,6 +229,16 @@ function assignEventListeners() {
         scanButton.addEventListener('click', scanCode);
     }
 
+    var scanButton = document.getElementById('scan_create_product_button');
+    if (scanButton) {
+        scanButton.addEventListener('click', scan_create_product);
+    }
+
+    var scanButton = document.getElementById('scan_find_product_button');
+    if (scanButton) {
+        scanButton.addEventListener('click', scan_find_product);
+    }
+
     var takePhotoButton = document.getElementById('takePhotoButton');
     if (takePhotoButton) {
         takePhotoButton.addEventListener('click', takePhoto);
