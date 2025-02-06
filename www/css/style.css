@@ -647,7 +647,6 @@ a.socialIcon:hover,
 	/* Comienza oculto debajo de la pantalla */
 	left: 50%;
 	transform: translateX(-50%);
-	background-color: #0f6b41;
 	color: #fff;
 	padding: 10px 20px;
 	border-radius: 5px;

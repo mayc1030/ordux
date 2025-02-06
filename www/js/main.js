@@ -336,14 +336,27 @@ function assignEventListeners() {
 }
 
 
-function showSlidingMessage(message) {
+function showSlidingMessage(message, state) {
     var $message = $('#sliding-message');
 
     // Establecer el texto del mensaje
     $message.text(message);
 
     // Mostrar el elemento deslizándolo hacia arriba
-    $message.removeClass('hidden').css('bottom', '20px');
+    if (state == "success") {
+        $message.removeClass('hidden').css({
+            'bottom': '20px',
+            'background-color': '#0f6b41',
+            'with': '100%'
+        });
+    }
+    if (state == "error") {
+        $message.removeClass('hidden').css({
+            'bottom': '20px',
+            'background-color': '#990000',
+            'with': '100%'
+        });
+    }
 
     // Esperar 3 segundos y luego ocultar el mensaje
     setTimeout(function () {

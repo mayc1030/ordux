@@ -146,7 +146,7 @@ function saveData() {
             // Verificar si el SKU ya existe
             tx.executeSql("SELECT COUNT(*) AS count FROM productos WHERE sku = ?", [sku], function (tx, result) {
                 if (result.rows.item(0).count > 0) {
-                    showSlidingMessage("El SKU ya existe. No se guardó el producto.");
+                    showSlidingMessage("El SKU ya existe. No se guardó el producto.", "error");
                     return;
                 } else {
                     insertarProducto(tx);
@@ -181,7 +181,7 @@ function saveData() {
                 console.log("Producto guardado con éxito en la base de datos con id: " + res.insertId);
                 if (linkByDataLoad) {
                     $('#loader').removeClass('hidden');
-                    showSlidingMessage('Producto guardado con éxito');
+                    showSlidingMessage('Producto guardado con éxito', "success");
                     setTimeout(function () {
                         linkByDataLoad.click();
                     }, 3000);
