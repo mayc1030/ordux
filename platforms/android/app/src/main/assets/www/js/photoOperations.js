@@ -1,21 +1,21 @@
 function takePhoto() {
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-        quality: 20,
+        quality: 10,
         destinationType: Camera.DestinationType.DATA_URL,
         saveToPhotoAlbum: false,
         correctOrientation: true,
-        targetWidth: 800, // Redimensionar la imagen
-        targetHeight: 600, // Redimensionar la imagen
+        targetWidth: 150, // Redimensionar la imagen
+        targetHeight: 200, // Redimensionar la imagen
     });
 }
 
 function selectPhoto() {
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-        quality: 20,
+        quality: 10,
         sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
         destinationType: Camera.DestinationType.DATA_URL,
-        targetWidth: 800, // Redimensionar la imagen
-        targetHeight: 600, // Redimensionar la imagen
+        targetWidth: 150, // Redimensionar la imagen
+        targetHeight: 200, // Redimensionar la imagen
     });
 }
 

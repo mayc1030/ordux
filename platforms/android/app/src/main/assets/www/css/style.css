@@ -747,3 +747,20 @@ a.socialIcon:hover,
 	cursor: not-allowed;
 	/* Cambiar el cursor a uno que indique que no es clicable */
 }
+
+
+.pictures {
+	width: 90px;
+	min-height: 74px;
+	height: auto;
+	border-radius: 16px;
+	cursor: pointer;
+
+	/* Ajustes para centrar la imagen */
+	object-fit: contain;
+	/* Hace que la imagen se ajuste sin deformarse */
+	object-position: center;
+	/* La centra dentro del contenedor */
+	display: block;
+	/* Evita espacios no deseados */
+}
