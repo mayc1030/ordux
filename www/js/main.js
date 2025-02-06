@@ -1,3 +1,10 @@
+//megatiendas.co/pasabocas-y-dulces?page=3
+// mercoapp.com/categoria-producto/supermercados-usaquen/confiteria/pasabocas/?v=5bfe619476f8
+// vaquitaexpress.com.co/licores-bebidas-y-snacks/snacks.html?p=3
+// co.openfoodfacts.org/14
+// mistiendas.com.co/merca-plaza-pilares/categoria/chocolates
+// https://www.resizepixel.com
+
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
@@ -27,15 +34,15 @@ function onDeviceReady() {
 
         // JSON de ejemplo
         const productos = [
-            { "id": 111, "image": "./img/producttest.jpg", "name": "ABADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 222, "image": "./img/producttest.jpg", "name": "xxNEGRONI DE LA MONTAÑA", "sale_price": 82000, "purchase_price": 20000, "sku": "abc123", "bar_code": "1234", "stock": "8", "type": "producto", "category": "Cocteles" },
-            { "id": 333, "image": "./img/producttest.jpg", "name": "BADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 444, "image": "./img/producttest.jpg", "name": "BBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 555, "image": "./img/producttest.jpg", "name": "CBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 666, "image": "./img/producttest.jpg", "name": "DBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 777, "image": "./img/producttest.jpg", "name": "EBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 888, "image": "./img/producttest.jpg", "name": "FBADA", "sale_price": 20000, "purchase_price": 18000, "sku": "abc123", "bar_code": "123456789", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 999, "image": "./img/producttest.jpg", "name": "NATUCHIPS", "sale_price": 2200, "purchase_price": 1000, "sku": "abc1234", "bar_code": "7702189055453", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 111, "image": "./img/choclitos-picante.webp", "name": "Choclitos Picantes X45g", "sale_price": 1800, "purchase_price": 1000, "sku": "abc123", "bar_code": "7702189058553", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 222, "image": "./img/choclitos-limon.webp", "name": "Choclitos Limón X45g", "sale_price": 1900, "purchase_price": 1000, "sku": "abc123", "bar_code": "7702189058546", "stock": "8", "type": "producto", "category": "Cocteles" },
+            { "id": 333, "image": "./img/detodito-bbq.webp", "name": "DeTodito BBQ X45g", "sale_price": 3100, "purchase_price": 2000, "sku": "abc123", "bar_code": "7702189019646", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 444, "image": "./img/producttest.jpg", "name": "DeTodito Limón X45g", "sale_price": 3100, "purchase_price": 2000, "sku": "abc123", "bar_code": "7702189051660", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 555, "image": "./img/doritos.webp", "name": "Doritos Mega Queso X34g", "sale_price": 2100, "purchase_price": 1500, "sku": "abc123", "bar_code": "7702189050175", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 666, "image": "./img/producttest.jpg", "name": "Papas Pringles Sabor Original X37g", "sale_price": 6400, "purchase_price": 5000, "sku": "abc123", "bar_code": "038000846731", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 777, "image": "./img/producttest.jpg", "name": "Papas Rizadas Sabor a Mayonesa X36gr Yupi", "sale_price": 2000, "purchase_price": 1000, "sku": "abc123", "bar_code": "7703133013406", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 888, "image": "./img/papas-margarita-pollo.webp", "name": "Papas Margarita Pollo X65g", "sale_price": 3900, "purchase_price": 2000, "sku": "abc123", "bar_code": "7702189056740", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 999, "image": "./img/natuchips.webp", "name": "NatuChips Platano Verde", "sale_price": 2200, "purchase_price": 1000, "sku": "abc1234", "bar_code": "7702189055453", "stock": "8", "type": "insumo", "category": "Cocteles" },
         ];
 
         // Inserta los datos
