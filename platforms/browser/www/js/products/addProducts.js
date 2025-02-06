@@ -140,29 +140,45 @@ function saveData() {
     var fields = ['image', 'name', 'sale_price', 'purchase_price', 'stock', 'category'];
     var values = [imageBase64, name, sale_price, purchase_price, stock, category];
 
-    // Solo agregar campos opcionales si tienen valores
-    if (sku !== null) {
-        fields.push('sku');
-        values.push(sku);
-    }
-    if (bar_code !== null) {
-        fields.push('bar_code');
-        values.push(bar_code);
-    }
-
-    if (type !== null) {
-        fields.push('type');
-        values.push(type);
-    }
-
-    // Crear la cadena SQL final
-    var sql = `INSERT INTO productos (${fields.join(', ')}) VALUES (${fields.map(() => '?').join(', ')})`;
 
     db.transaction(function (tx) {
+        if (sku) {
+            // Verificar si el SKU ya existe
+            tx.executeSql("SELECT COUNT(*) AS count FROM productos WHERE sku = ?", [sku], function (tx, result) {
+                if (result.rows.item(0).count > 0) {
+                    showSlidingMessage("El SKU ya existe. No se guardó el producto.");
+                    return;
+                } else {
+                    insertarProducto(tx);
+                }
+            });
+        } else {
+            insertarProducto(tx);
+        }
+    });
+
+    function insertarProducto(tx) {
+        var fields = ['image', 'name', 'sale_price', 'purchase_price', 'stock', 'category'];
+        var values = [imageBase64, name, sale_price, purchase_price, stock, category];
+
+        if (sku !== null) {
+            fields.push('sku');
+            values.push(sku);
+        }
+        if (bar_code !== null) {
+            fields.push('bar_code');
+            values.push(bar_code);
+        }
+        if (type !== null) {
+            fields.push('type');
+            values.push(type);
+        }
+
+        var sql = `INSERT INTO productos (${fields.join(', ')}) VALUES (${fields.map(() => '?').join(', ')})`;
+
         tx.executeSql(sql, values,
             function (tx, res) {
                 console.log("Producto guardado con éxito en la base de datos con id: " + res.insertId);
-
                 if (linkByDataLoad) {
                     $('#loader').removeClass('hidden');
                     showSlidingMessage('Producto guardado con éxito');
@@ -172,8 +188,9 @@ function saveData() {
                 }
             }, function (tx, error) {
                 console.log("Error al guardar el producto: " + error.message);
-            });
-    });
+            }
+        );
+    }
 }
 
 

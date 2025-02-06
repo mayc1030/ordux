@@ -140,40 +140,61 @@ function saveData() {
     var fields = ['image', 'name', 'sale_price', 'purchase_price', 'stock', 'category'];
     var values = [imageBase64, name, sale_price, purchase_price, stock, category];
 
-    // Solo agregar campos opcionales si tienen valores
-    if (sku !== null) {
-        fields.push('sku');
-        values.push(sku);
-    }
-    if (bar_code !== null) {
-        fields.push('bar_code');
-        values.push(bar_code);
-    }
 
-    if (type !== null) {
-        fields.push('type');
-        values.push(type);
-    }
-
-    // Crear la cadena SQL final
-    var sql = `INSERT INTO productos (${fields.join(', ')}) VALUES (${fields.map(() => '?').join(', ')})`;
-
+    // Verificar si el SKU ya existe
+    var validation_exist = false;
     db.transaction(function (tx) {
-        tx.executeSql(sql, values,
-            function (tx, res) {
-                console.log("Producto guardado con éxito en la base de datos con id: " + res.insertId);
-
-                if (linkByDataLoad) {
-                    $('#loader').removeClass('hidden');
-                    showSlidingMessage('Producto guardado con éxito');
-                    setTimeout(function () {
-                        linkByDataLoad.click();
-                    }, 3000);
+        if (sku) {
+            // Verificar si el SKU ya existe
+            tx.executeSql("SELECT COUNT(*) AS count FROM productos WHERE sku = ?", [sku], function (tx, result) {
+                if (result.rows.item(0).count > 0) {
+                    validation_exist = true;
+                } else {
+                    validation_exist = false;
                 }
-            }, function (tx, error) {
-                console.log("Error al guardar el producto: " + error.message);
             });
+        } else {
+            validation_exist = false;
+        }
     });
+
+    if (!validation_exist) {
+
+        // Solo agregar campos opcionales si tienen valores
+        if (sku !== null) {
+            fields.push('sku');
+            values.push(sku);
+        }
+        if (bar_code !== null) {
+            fields.push('bar_code');
+            values.push(bar_code);
+        }
+
+        if (type !== null) {
+            fields.push('type');
+            values.push(type);
+        }
+
+        // Crear la cadena SQL final
+        var sql = `INSERT INTO productos (${fields.join(', ')}) VALUES (${fields.map(() => '?').join(', ')})`;
+
+        db.transaction(function (tx) {
+            tx.executeSql(sql, values,
+                function (tx, res) {
+                    console.log("Producto guardado con éxito en la base de datos con id: " + res.insertId);
+
+                    if (linkByDataLoad) {
+                        $('#loader').removeClass('hidden');
+                        showSlidingMessage('Producto guardado con éxito');
+                        setTimeout(function () {
+                            linkByDataLoad.click();
+                        }, 3000);
+                    }
+                }, function (tx, error) {
+                    console.log("Error al guardar el producto: " + error.message);
+                });
+        });
+    }
 }
 
 
