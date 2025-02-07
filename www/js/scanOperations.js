@@ -87,7 +87,7 @@ function saveScanResult(result) {
 function scan_create_product() {
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            var skuField = document.getElementById('field-sku-product');
+            var skuField = document.getElementById('field-bar-code-product');
             skuField.value = result.text;
         },
         function (error) {
