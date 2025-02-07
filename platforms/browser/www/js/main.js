@@ -34,15 +34,15 @@ function onDeviceReady() {
 
         // JSON de ejemplo
         const productos = [
-            { "id": 111, "image": "./img/choclitos-picante.webp", "name": "Choclitos Picantes X45g", "sale_price": 1800, "purchase_price": 1000, "sku": "abc123", "bar_code": "7702189058553", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 222, "image": "./img/choclitos-limon.webp", "name": "Choclitos Limón X45g", "sale_price": 1900, "purchase_price": 1000, "sku": "abc123", "bar_code": "7702189058546", "stock": "8", "type": "producto", "category": "Cocteles" },
-            { "id": 333, "image": "./img/detodito-bbq.webp", "name": "DeTodito BBQ X45g", "sale_price": 3100, "purchase_price": 2000, "sku": "abc123", "bar_code": "7702189019646", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 444, "image": "./img/producttest.jpg", "name": "DeTodito Limón X45g", "sale_price": 3100, "purchase_price": 2000, "sku": "abc123", "bar_code": "7702189051660", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 555, "image": "./img/doritos.webp", "name": "Doritos Mega Queso X34g", "sale_price": 2100, "purchase_price": 1500, "sku": "abc123", "bar_code": "7702189050175", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 666, "image": "./img/producttest.jpg", "name": "Papas Pringles Sabor Original X37g", "sale_price": 6400, "purchase_price": 5000, "sku": "abc123", "bar_code": "038000846731", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 777, "image": "./img/producttest.jpg", "name": "Papas Rizadas Sabor a Mayonesa X36gr Yupi", "sale_price": 2000, "purchase_price": 1000, "sku": "abc123", "bar_code": "7703133013406", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 888, "image": "./img/papas-margarita-pollo.webp", "name": "Papas Margarita Pollo X65g", "sale_price": 3900, "purchase_price": 2000, "sku": "abc123", "bar_code": "7702189056740", "stock": "8", "type": "insumo", "category": "Cocteles" },
-            { "id": 999, "image": "./img/natuchips.webp", "name": "NatuChips Platano Verde", "sale_price": 2200, "purchase_price": 1000, "sku": "abc1234", "bar_code": "7702189055453", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 111, "image": "./img/choclitos-picante.webp", "name": "Choclitos Picantes X45g", "sale_price": 1800, "purchase_price": 1000, "sku": "7702189058553", "bar_code": "7702189058553", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 222, "image": "./img/choclitos-limon.webp", "name": "Choclitos Limón X45g", "sale_price": 1900, "purchase_price": 1000, "sku": "7702189058546", "bar_code": "7702189058546", "stock": "8", "type": "producto", "category": "Cocteles" },
+            { "id": 333, "image": "./img/detodito-bbq.webp", "name": "DeTodito BBQ X45g", "sale_price": 3100, "purchase_price": 2000, "sku": "7702189019646", "bar_code": "7702189019646", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 444, "image": "./img/producttest.jpg", "name": "DeTodito Limón X45g", "sale_price": 3100, "purchase_price": 2000, "sku": "7702189051660", "bar_code": "7702189051660", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 555, "image": "./img/doritos.webp", "name": "Doritos Mega Queso X34g", "sale_price": 2100, "purchase_price": 1500, "sku": "7702189050175", "bar_code": "7702189050175", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 666, "image": "./img/producttest.jpg", "name": "Papas Pringles Sabor Original X37g", "sale_price": 6400, "purchase_price": 5000, "sku": "038000846731", "bar_code": "038000846731", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 777, "image": "./img/producttest.jpg", "name": "Papas Rizadas Sabor a Mayonesa X36gr Yupi", "sale_price": 2000, "purchase_price": 1000, "sku": "7703133013406", "bar_code": "7703133013406", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 888, "image": "./img/papas-margarita-pollo.webp", "name": "Papas Margarita Pollo X65g", "sale_price": 3900, "purchase_price": 2000, "sku": "7702189056740", "bar_code": "7702189056740", "stock": "8", "type": "insumo", "category": "Cocteles" },
+            { "id": 999, "image": "./img/natuchips.webp", "name": "NatuChips Platano Verde", "sale_price": 2200, "purchase_price": 1000, "sku": "7702189055453", "bar_code": "7702189055453", "stock": "8", "type": "insumo", "category": "Cocteles" },
         ];
 
         // Inserta los datos
@@ -344,15 +344,16 @@ function showSlidingMessage(message, state) {
 
     // Mostrar el elemento deslizándolo hacia arriba
     if (state == "success") {
-        $message.removeClass('hidden').css('bottom', '20px');
+        $message.removeClass('hidden').css({
+            'bottom': '20px',
+            'background-color': '#0f6b41',
+            'with': '100%'
+        });
     }
     if (state == "error") {
         $message.removeClass('hidden').css({
             'bottom': '20px',
-            'background-color': '#990000', // Amarillo, puedes cambiarlo a otro color
-            'color': '#000', // Texto negro para contraste
-            'padding': '10px', // Espaciado interno
-            'border-radius': '5px', // Bordes redondeados opcionales
+            'background-color': '#990000',
             'with': '100%'
         });
     }

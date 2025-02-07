@@ -142,9 +142,9 @@ function saveData() {
 
 
     db.transaction(function (tx) {
-        if (sku) {
+        if (bar_code) {
             // Verificar si el SKU ya existe
-            tx.executeSql("SELECT COUNT(*) AS count FROM productos WHERE sku = ?", [sku], function (tx, result) {
+            tx.executeSql("SELECT COUNT(*) AS count FROM productos WHERE bar_code = ?", [bar_code], function (tx, result) {
                 if (result.rows.item(0).count > 0) {
                     showSlidingMessage("El SKU ya existe. No se guardó el producto.", "error");
                     return;
